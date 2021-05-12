@@ -29,7 +29,7 @@ public class UserService {
         userResponseVO.setUser(userRepository.findUserById(id));
 
         userResponseVO.setDepartment(restTemplate.getForObject(
-                "http://localhost:9001/departments/"+ userResponseVO.getUser().getDepartmentId(),
+                "http://DEPARTMENT-SERVICE/departments/"+ userResponseVO.getUser().getDepartmentId(),
                 Department.class));
         return userResponseVO;
     }
